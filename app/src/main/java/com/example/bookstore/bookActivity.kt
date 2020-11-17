@@ -1,5 +1,6 @@
 package com.example.bookstore
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -25,9 +26,9 @@ class bookActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val fab: FloatingActionButton = findViewById(R.id.btFab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        fab.setOnClickListener {
+            startActivity(Intent(this, AddNewActivity::class.java))
+
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
