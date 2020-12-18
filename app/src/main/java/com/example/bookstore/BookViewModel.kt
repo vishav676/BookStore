@@ -5,7 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class BookViewModel(application: Application) : AndroidViewModel(application){
 
@@ -18,5 +20,18 @@ class BookViewModel(application: Application) : AndroidViewModel(application){
     fun insert(book:books) = viewModelScope.launch ( Dispatchers.IO )
     {
         bookDao.insert(book)
+    }
+    fun update(book:books) = viewModelScope.launch ( Dispatchers.IO )
+    {
+        bookDao.update(book)
+    }
+
+    fun search(bookId: Int) = runBlocking {
+        return@runBlocking bookDao.search(bookId)
+    }
+
+    fun delete(book:books) = viewModelScope.launch ( Dispatchers.IO )
+    {
+        bookDao.delete(book)
     }
 }

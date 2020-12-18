@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.ListFragment
 import androidx.recyclerview.widget.RecyclerView
 
-class bookAdapter internal constructor(context: Context): RecyclerView.Adapter<bookAdapter.bookViewHolder>(){
+class bookAdapter internal constructor(context: Context, val listener : (books) -> Unit): RecyclerView.Adapter<bookAdapter.bookViewHolder>(){
 
     private val infalter: LayoutInflater = LayoutInflater.from(context)
     private var bookList = emptyList<books>()
@@ -23,6 +25,9 @@ class bookAdapter internal constructor(context: Context): RecyclerView.Adapter<b
     override fun onBindViewHolder(holder: bookAdapter.bookViewHolder, position: Int) {
         val current = bookList[position]
         holder.bookItemView.text = current.name
+        holder.bookItemView.setOnClickListener{
+            listener(current)
+        }
     }
 
     internal fun setBooks(bookList : List<books>){
