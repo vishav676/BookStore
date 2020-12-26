@@ -14,7 +14,7 @@ class BookViewModel(application: Application) : AndroidViewModel(application){
 
 
 
-    val bookDao = BookDatabase.getDatabase(application, viewModelScope).bookDao()
+    val bookDao = BookDatabase.getDatabase(application).bookDao()
     val allBooks: LiveData<List<books>> = bookDao.getAllBooks()
 
     fun insert(book:books) = viewModelScope.launch ( Dispatchers.IO )

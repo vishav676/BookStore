@@ -14,4 +14,9 @@
         android:textAppearance="@android:style/TextAppearance.Large"
         />
 
+    <View
+        android:layout_width="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_height="1dp"/>
+
 </LinearLayout>
