@@ -20,7 +20,7 @@ interface bookDAO {
     fun delete(model: books)
 
     @Query("SELECT * from booktable WHERE booktable.BookId = :id")
-    suspend fun search(id: Int) : books
+    fun search(id: Int) : books
 
     @Update
     fun update(model: books)

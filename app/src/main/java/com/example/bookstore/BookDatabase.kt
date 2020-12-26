@@ -25,8 +25,6 @@ abstract class BookDatabase : RoomDatabase(){
             INSTANCE?.let { database ->
                 scope.launch {
                     var bookDao = database.bookDao()
-
-
                 }
             }
         }
@@ -49,6 +47,7 @@ abstract class BookDatabase : RoomDatabase(){
                     BookDatabase::class.java,
                     "book_database"
                 ).addCallback(BookDatabaseCallback(scope))
+                    .allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
                 return instance

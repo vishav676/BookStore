@@ -37,7 +37,6 @@ class HomeFragment : Fragment() {
 
         bookViewModel = ViewModelProvider(this).get(BookViewModel::class.java)
         lvBooks.layoutManager = LinearLayoutManager(activity?.applicationContext)
-        bookViewModel.insert(books(1,"Vishav","vishav","Vishav","vishav"))
 
 
         bookViewModel.allBooks.observe(viewLifecycleOwner, Observer { books ->

@@ -24,7 +24,7 @@ class bookAdapter internal constructor(context: Context, val listener : (books) 
 
     override fun onBindViewHolder(holder: bookAdapter.bookViewHolder, position: Int) {
         val current = bookList[position]
-        holder.bookItemView.text = current.name
+        holder.bookItemView.text = (position + 1).toString() +" "+ current.name
         holder.bookItemView.setOnClickListener{
             listener(current)
         }
