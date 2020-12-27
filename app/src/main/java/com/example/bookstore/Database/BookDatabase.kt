@@ -1,4 +1,4 @@
-package com.example.bookstore
+package com.example.bookstore.Database
 
 import android.content.Context
 import android.os.Build
@@ -7,10 +7,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.bookstore.books
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.Dispatchers
-
 
 
 @Database(entities = [books::class], version = 1)

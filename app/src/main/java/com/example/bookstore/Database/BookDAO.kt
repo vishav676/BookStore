@@ -1,7 +1,8 @@
-package com.example.bookstore
+package com.example.bookstore.Database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.bookstore.books
 
 
 @Dao
@@ -11,7 +12,7 @@ interface bookDAO {
     fun getAllBooks():LiveData<List<books>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(book:books)
+    fun insert(book: books)
 
     @Query("DELETE FROM BookTable")
     fun deleteAll()

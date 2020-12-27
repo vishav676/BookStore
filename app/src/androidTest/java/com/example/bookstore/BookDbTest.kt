@@ -3,6 +3,8 @@ package com.example.bookstore
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.example.bookstore.Database.BookDatabase
+import com.example.bookstore.Database.bookDAO
 import junit.framework.Assert.assertNotNull
 import org.junit.After
 import org.junit.Assert

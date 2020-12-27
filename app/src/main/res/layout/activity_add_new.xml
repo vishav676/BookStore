@@ -6,47 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".AddNewActivity">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tlTitle"
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Title">
     <EditText
         android:id="@+id/etBookTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Title"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tlYear"
+        android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tlTitle"
+        android:hint="Year Published">
     <EditText
         android:id="@+id/etBookYearPub"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Year Published"
-        android:layout_marginTop="16dp"
-        android:inputType="date"
+        android:inputType="date" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tlAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etBookTitle" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tlYear"
+        android:hint="Author">
     <EditText
         android:id="@+id/etBookAuthor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Author"
-        android:layout_marginTop="16dp"
         android:inputType="text"
+         />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tlDesc"
+        android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etBookYearPub" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tlAuthor"
+        android:hint="Description">
     <EditText
         android:id="@+id/etBookDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Description"
         android:inputType="textMultiLine"
         android:lines="5"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etBookAuthor" />
-
+        />
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
